@@ -1,0 +1,17 @@
+*.iml
+.idea/
+/out/*.jar
+*.jar
+*.class
+*.war
+pom.xml
+repository/target/maven-status/
+service/target/
+web-service/src/main/resources/
+web-service/target/classes/
+web-service/src/main/webapp/WEB-INF/views/
+repository/target/classes/com/clientbank/repository/config/
+web-service/target/clientbank/WEB-INF/classes/
+web-service/target/clientbank/WEB-INF/views/
+web-service/target/clientbank/js/
+target/
