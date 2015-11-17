@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.Date;
+import java.time.LocalTime;
 
 import static org.junit.Assert.assertTrue;
 
@@ -23,32 +23,36 @@ public class DayPartCalcTest {
 
 
     @Test
-    public void getPart() throws Exception {
+    public void getMorning() throws Exception {
         DayPartCalc dayPartCalc = new DayPartCalc();
-        Date dt = new Date();
+        LocalTime localTime = LocalTime.of(6, 0);
+        dayPart = dayPartCalc.getPart(localTime);
+        assertTrue(dayPart.getName().equals("morning"));
+    }
 
-        dt.setHours(6);
-
-        dayPart = dayPartCalc.getPart(dt);
-
-       assertTrue(dayPart.getName().equals("morning"));
-
-        dt.setHours(20);
-        dayPart = dayPartCalc.getPart(dt);
+    @Test
+    public void getEvening() throws Exception {
+        DayPartCalc dayPartCalc = new DayPartCalc();
+        LocalTime localTime = LocalTime.of(21, 15);
+        dayPart = dayPartCalc.getPart(localTime);
         assertTrue(dayPart.getName().equals("evening"));
 
-        dt.setHours(17);
-        dayPart = dayPartCalc.getPart(dt);
+    }
+    @Test
+    public void getDay() throws Exception {
+        DayPartCalc dayPartCalc = new DayPartCalc();
+        LocalTime localTime = LocalTime.of(17, 45);
+        dayPart = dayPartCalc.getPart(localTime);
         assertTrue(dayPart.getName().equals("day"));
     }
+
 
     @Test
     public void getNight(){
         DayPartCalc dayPartCalc = new DayPartCalc();
-        Date dt = new Date();
-        dt.setHours(2);
-        dayPart = dayPartCalc.getPart(dt);
+        LocalTime localTime = LocalTime.of(2,30);
+
+        dayPart = dayPartCalc.getPart(localTime);
         assertTrue(dayPart.getName().equals("night"));
     }
-
 }

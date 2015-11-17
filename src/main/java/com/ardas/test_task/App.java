@@ -3,7 +3,7 @@ package com.ardas.test_task;
 
 import org.apache.log4j.Logger;
 
-import java.util.Date;
+import java.time.LocalTime;
 
 
 /**
@@ -22,8 +22,8 @@ public class App {
     public static void main(String[] args) {
 
         DayPartCalc calc = new DayPartCalc();
-        Date dt = new Date();
-        DayPart dayPart = calc.getPart(dt);
+        LocalTime localTime = LocalTime.now();
+        DayPart dayPart = calc.getPart(localTime);
 
         showMessage(dayPart);
         logMessage(dayPart);

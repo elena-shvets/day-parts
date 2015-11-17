@@ -3,8 +3,8 @@ package com.ardas.test_task;
 
 import org.apache.log4j.Logger;
 
+import java.time.LocalTime;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 
@@ -15,6 +15,7 @@ import java.util.GregorianCalendar;
  * @version 1.0
  * @since 15.11.15
  */
+
 public class DayPartCalc {
     private static final Logger LOG = Logger.getLogger(DayPartCalc.class);
 
@@ -22,18 +23,19 @@ public class DayPartCalc {
 
     /**
      * Gets part of a day by time
-     * @param date
+     * @param localTime
      * @return dayPartRes
      * @throws IllegalArgumentException
      */
-    public DayPart getPart(Date date) throws IllegalArgumentException {
+
+    public DayPart getPart(LocalTime localTime) throws IllegalArgumentException {
         DayPart dayPartRes = null;
 
-        calendar.setTime(date);
         int i = getSecondsByParams(
-            calendar.get(Calendar.HOUR_OF_DAY),
-            calendar.get(Calendar.MINUTE),
-            calendar.get(Calendar.SECOND)
+                localTime.getHour(),
+                localTime.getMinute(),
+                localTime.getSecond()
+
         );
 
         DayPart[] list = DayPart.values();
