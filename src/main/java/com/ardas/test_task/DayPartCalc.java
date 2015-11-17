@@ -4,8 +4,6 @@ package com.ardas.test_task;
 import org.apache.log4j.Logger;
 
 import java.time.LocalTime;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 
 /**
@@ -18,8 +16,6 @@ import java.util.GregorianCalendar;
 
 public class DayPartCalc {
     private static final Logger LOG = Logger.getLogger(DayPartCalc.class);
-
-    private Calendar calendar = GregorianCalendar.getInstance();
 
     /**
      * Gets part of a day by time
