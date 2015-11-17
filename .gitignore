@@ -4,7 +4,7 @@
 *.jar
 *.class
 *.war
-pom.xml
+
 repository/target/maven-status/
 service/target/
 web-service/src/main/resources/
